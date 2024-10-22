@@ -3,7 +3,10 @@
 def encode(data):
     out = ""
     for char in data:
-        out += str(int(char) + 3)
+        if(int(char) > 6):
+            out += str(3 - (10-int(char)))
+        else:
+            out += str(int(char) + 3)
     return out
 
 
@@ -33,9 +36,9 @@ if __name__ == "__main__":
             break
         elif menu == "1":
             data = input("Enter data to encode: ")
-            print(encode(data))
+            encrypted = encode(data)
+            print("Data encoded")
         elif menu == "2":
-            data = input("Enter data to decode: ")
-            # print(decode(data))
+            print(decode(encrypted))
         else:
             print("Invalid input")
