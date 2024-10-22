@@ -22,7 +22,7 @@ def decode(data):
         else:
             result += str(temp_array[j])
 
-
+    return result
 
 if __name__ == "__main__":
     while(True):
