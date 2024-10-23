@@ -30,15 +30,16 @@ def decode(data):
 if __name__ == "__main__":
     while(True):
         # menu
-        print("0. Exit\n1. Encode\n2. Decode\n")
-        menu = input("Enter your choice: ")
-        if menu == "0":
+        print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
+        menu = input("Please enter an option: ")
+        if menu == "3":
             break
         elif menu == "1":
-            data = input("Enter data to encode: ")
+            data = input("Please enter your password to encode: ")
             encrypted = encode(data)
-            print("Data encoded")
+            print("Your password has been encoded and stored!")
         elif menu == "2":
-            print(decode(encrypted))
+            decrypted = decode(encrypted)
+            print(f"The encoded password is {encrypted}, and the original password is {decrypted}.")
         else:
             print("Invalid input")
