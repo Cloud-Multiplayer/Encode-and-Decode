@@ -16,14 +16,14 @@ def decode(data):
     temp_array = []
 
     for i in range(len(data)): #splits string into integers subtracts 3
-        temp_array.append(int(data[i] - 3))
+        temp_array.append(int(data[i]))
 
 
     for j in range(len(temp_array)): #creates string character following rollover digit rules
-        if temp_array[j] < 0:
-            result += str(temp_array[j] + 10)
+        if (temp_array[j] - 3) < 0:
+            result += str(temp_array[j] + 7)
         else:
-            result += str(temp_array[j])
+            result += str(temp_array[j] - 3)
 
     return result
 
